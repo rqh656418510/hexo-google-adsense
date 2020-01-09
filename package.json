@@ -1,0 +1,17 @@
+{
+  "name": "hexo-google-adsense",
+  "version": "0.0.3",
+  "description": "hexo tag plugin for google adsense",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tag",
+    "google",
+    "adsense"
+  ],
+  "author": "rqh656418510",
+  "license": "MIT",
+  "dependencies": {}
+}
