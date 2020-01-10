@@ -19,7 +19,7 @@ hexo_google_adsense:
 
 #### 参数说明
 
-- **enable**： 是否启用插件
+- **enable**： 是否启用插件，默认不启用
 - **file_path**： 存放谷歌广告代码的文件，支持使用绝对路径或者相对于 Hexo 根目录的路径，同时支持使用 URL 路径（例如： https://www.example.com/ads/google/article_ads.txt）
 
 #### 注意事项

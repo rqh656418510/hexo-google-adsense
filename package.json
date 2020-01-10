@@ -1,6 +1,6 @@
 {
   "name": "hexo-google-adsense",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "hexo tag plugin for google adsense",
   "main": "index.js",
   "scripts": {
