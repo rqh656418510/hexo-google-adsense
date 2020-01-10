@@ -6,8 +6,9 @@ var process = require('child_process');
 var log = require('hexo-log')({name: 'hexo-google-adsense', debug: false});
 
 var config = hexo.config;
-var plugin_enable = config.hexo_google_adsense.enable;
-var file_path = config.hexo_google_adsense.file_path;
+var adsense_config = config.hexo_google_adsense;
+var plugin_enable = adsense_config ? adsense_config.enable : false;
+var file_path = adsense_config ? adsense_config.file_path : "source/ads/google/ads.txt";
 
 // 自定义标签的名称
 var custom_tag_name = "GoogleAdsense";
@@ -80,9 +81,11 @@ hexo.extend.tag.register(custom_tag_name, insertAds);
 
 // 注册过滤器
 hexo.extend.filter.register('before_post_render', function test(data){
-  var tag = "{% " + custom_tag_name + " %}";
-  if(data.content.indexOf(tag) != -1){
-      log.info("Insert google adsense code for blog: " + data.title);
+  if(plugin_enable){
+      var tag = "{% " + custom_tag_name + " %}";
+      if(data.content.indexOf(tag) != -1){
+          log.info("Insert google adsense code for blog: " + data.title);
+      }
   }
   return data;
 });
