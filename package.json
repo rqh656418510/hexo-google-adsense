@@ -1,11 +1,12 @@
 {
   "name": "hexo-google-adsense",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "hexo tag plugin for google adsense",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/rqh656418510/hexo-google-adsense.git",
   "keywords": [
     "tag",
     "google",
@@ -13,5 +14,9 @@
   ],
   "author": "rqh656418510",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rqh656418510/hexo-google-adsense.git"
+  }
 }
