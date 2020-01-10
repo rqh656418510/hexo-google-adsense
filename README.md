@@ -12,9 +12,6 @@
 #### 配置示例
 
 ``` yml
-google_adsense:
-  enable: true
-
 hexo_google_adsense:
   enable: true
   file_path: 'source/ads/google/article_ads.txt'
@@ -22,9 +19,8 @@ hexo_google_adsense:
 
 #### 参数说明
 
-- **google_adsense.enable**： 是否全局启用谷歌广告
-- **hexo_google_adsense.enable**： 是否启用谷歌广告插件
-- **hexo_google_adsense.file_path**： 存放谷歌广告代码的文件，支持使用绝对路径或者相对于 Hexo 根目录的路径，同时支持使用 URL 路径（例如： https://www.example.com/ads/google/article_ads.txt）
+- **enable**： 是否启用插件
+- **file_path**： 存放谷歌广告代码的文件，支持使用绝对路径或者相对于 Hexo 根目录的路径，同时支持使用 URL 路径（例如： https://www.example.com/ads/google/article_ads.txt）
 
 #### 注意事项
 

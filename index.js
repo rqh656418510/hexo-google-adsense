@@ -6,7 +6,6 @@ var process = require('child_process');
 var log = require('hexo-log')({name: 'hexo-google-adsense', debug: false});
 
 var config = hexo.config;
-var global_enable = config.google_adsense.enable;
 var plugin_enable = config.hexo_google_adsense.enable;
 var file_path = config.hexo_google_adsense.file_path;
 
@@ -69,7 +68,7 @@ function getAdsCode(path){
 
 // 插入广告代码
 function insertAds(args, content) {
-    if(global_enable && plugin_enable){
+    if(plugin_enable){
         var adsCode = getAdsCode(file_path).trim();
         return adsCode == '' ? content : adsCode;
     }
