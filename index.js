@@ -5,13 +5,25 @@ var path = require('path');
 var process = require('child_process');
 var log = require('hexo-log')({name: 'hexo-google-adsense', debug: false});
 
+var default_tag_name = "GoogleAdsense";
+var default_file_path = "source/ads/google/article_ads.html";
+
 var config = hexo.config;
 var adsense_config = config.hexo_google_adsense;
-var plugin_enable = adsense_config ? adsense_config.enable : false;
-var file_path = adsense_config ? adsense_config.file_path : "source/ads/google/ads.txt";
+var enable = adsense_config ? adsense_config.enable : false;
+var log_msg = adsense_config ? adsense_config.log_msg : false;
+var tag_name = adsense_config ? adsense_config.tag_name : default_tag_name;
+var file_path = adsense_config ? adsense_config.file_path : default_file_path;
 
 // 自定义标签的名称
-var custom_tag_name = "GoogleAdsense";
+if(!tag_name || tag_name.trim() === ""){
+  tag_name = default_tag_name;
+}
+
+// 文件路径
+if(!file_path || file_path.trim() === ""){
+  file_path = default_file_path;
+}
 
 // 是否为网址URL
 function isWebUrl(str){
@@ -69,7 +81,7 @@ function getAdsCode(path){
 
 // 插入广告代码
 function insertAds(args, content) {
-    if(plugin_enable){
+    if(enable){
         var adsCode = getAdsCode(file_path).trim();
         return adsCode == '' ? content : adsCode;
     }
@@ -77,12 +89,12 @@ function insertAds(args, content) {
 }
 
 // 注册标签
-hexo.extend.tag.register(custom_tag_name, insertAds);
+hexo.extend.tag.register(tag_name, insertAds);
 
 // 注册过滤器
 hexo.extend.filter.register('before_post_render', function test(data){
-  if(plugin_enable){
-      var tag = "{% " + custom_tag_name + " %}";
+  if(enable && log_msg){
+      var tag = "{% " + tag_name + " %}";
       if(data.content.indexOf(tag) != -1){
           log.info("Insert google adsense code for blog: " + data.title);
       }

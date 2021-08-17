@@ -1,14 +1,15 @@
 {
   "name": "hexo-google-adsense",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "hexo tag plugin for google adsense",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/rqh656418510/hexo-google-adsense.git",
+  "homepage": "https://github.com/rqh656418510/hexo-google-adsense",
   "keywords": [
     "tag",
+    "hexo",
     "google",
     "adsense"
   ],
