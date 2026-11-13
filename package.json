@@ -1,10 +1,16 @@
 {
   "name": "hexo-google-adsense",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "hexo tag plugin for google adsense",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/rqh656418510/hexo-google-adsense",
   "keywords": [
@@ -19,5 +25,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rqh656418510/hexo-google-adsense.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rqh656418510/hexo-google-adsense/issues"
   }
 }
